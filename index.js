@@ -5,12 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentCalculation = { operands: [], operator: '' };
     let awaitingNextOperand = false;
   
-    // Update the operation display
     function updateDisplay() {
       operationDisplay.textContent = currentOperation;
     }
   
-    // Clear all entries
     function resetCalculator() {
       currentOperation = '';
       currentCalculation = { operands: [], operator: '' };
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
       resultDisplay.textContent = '';
     }
   
-    // Add an operand or operator to the current calculation
     function inputDigit(digit) {
       if (awaitingNextOperand) {
         currentOperation = digit;
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
       awaitingNextOperand = true;
     }
   
-    // Perform AJAX call to Flask backend
     function performCalculation() {
       if (currentCalculation.operands.length === 2) {
         fetch('/api/calculate', {
@@ -75,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   
-    // Add event listeners to buttons
     document.querySelectorAll('.btn').forEach(button => {
       button.addEventListener('click', function(event) {
         const { target } = event;
@@ -97,11 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    // Handle theme toggle (Example placeholder - logic to be implemented)
-    document.querySelectorAll('#theme-options span').forEach(themeButton => {
-      themeButton.addEventListener('click', function() {
-        // Implement theme changing logic here
-      });
-    });
   });
   
