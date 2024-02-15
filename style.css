@@ -1,0 +1,96 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3a4764; /* Dark blue background */
+    font-family: 'Spartan', sans-serif;
+  }
+  
+  #calculator {
+    background-color: #252d44; /* Very dark blue */
+    padding: 20px;
+    border-radius: 10px;
+    width: 340px; /* Adjust based on the design */
+  }
+  
+  #display {
+    background-color: #181f32; /* Very dark desaturated blue */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  #operation, #result {
+    font-size: 1.5em;
+    text-align: right;
+  }
+  
+  #theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  #theme-options {
+    display: flex;
+  }
+  
+  #theme-options span {
+    cursor: pointer;
+    margin: 0 5px;
+    color: #434a59; /* Dark grayish blue */
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #eae3dc; /* Light grayish orange */
+    color: #434a59; /* Dark grayish blue */
+    border: none;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .btn:active {
+    background-color: #b4a597; /* Dark grayish orange */
+  }
+  
+  .operator {
+    background-color: #647198; /* Dark grayish blue */
+    color: white;
+  }
+  
+  .operator:active {
+    background-color: #414e73; /* Very dark grayish blue */
+  }
+  
+  #reset, #equals {
+    background-color: #d03f2f; /* Soft red */
+    color: white;
+    grid-column: span 2; /* Make them span two columns */
+  }
+  
+  #reset:active, #equals:active {
+    background-color: #93261a; /* Dark red */
+  }
+  
+  /* Grid layout for buttons */
+  #calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
